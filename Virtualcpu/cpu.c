@@ -98,12 +98,21 @@ void runCPU(CPU *cpu)
             cpu->B = cpu->A;
         }
         // opcode 6:
-        // JUMP to unstryction
+        // JUMP to insstruction
         else if(opcode == 6){
 
         cpu->PC = cpu->memory[cpu->PC];
     }
 
+        // opcode 6:
+        else if (opcode == 7){
+           if(cpu->Z = 1){
+            cpu->PC = cpu->memory[cpu->PC];
+           }
+            else{
+                cpu->PC++;
+            }
+        }
         // Opcode 0:
         // HALT instruction
         // Stops execution loop
