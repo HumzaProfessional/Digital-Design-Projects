@@ -92,7 +92,6 @@ void runCPU(CPU *cpu)
 
         // Opcode 5:
         // COPY register A into register B
-        // (MOV B, A instruction)
         else if(opcode == 5)
         {
             cpu->B = cpu->A;
@@ -104,9 +103,11 @@ void runCPU(CPU *cpu)
         cpu->PC = cpu->memory[cpu->PC];
     }
 
-        // opcode 6:
+        // opcode 7:
+        // conditonal JUMP
+        // useful for loops
         else if (opcode == 7){
-           if(cpu->Z = 1){
+           if(cpu->Z == 1){
             cpu->PC = cpu->memory[cpu->PC];
            }
             else{
@@ -131,10 +132,13 @@ void runCPU(CPU *cpu)
     }
 
 }
+// Show the final state of the registers
+// Purerly for debugging and verifcation
 void printCPU(CPU *cpu)
 {
     printf("A: %u\n", cpu->A);
     printf("B: %u\n", cpu->B);
     printf("Z: %u\n", cpu->Z);
+     printf("Z: %u\n", cpu->C);
     printf("PC: %u\n", cpu->PC);
 }
