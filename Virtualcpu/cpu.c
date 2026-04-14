@@ -139,6 +139,6 @@ void printCPU(CPU *cpu)
     printf("A: %u\n", cpu->A);
     printf("B: %u\n", cpu->B);
     printf("Z: %u\n", cpu->Z);
-     printf("Z: %u\n", cpu->C);
+     printf("C: %u\n", cpu->C);
     printf("PC: %u\n", cpu->PC);
 }
