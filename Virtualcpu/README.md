@@ -22,7 +22,7 @@ The CPU follows this cycle:
 
 ### Debug and verification:
 
- The follow code inside `runCPU()`: and 
+ The follow code inside `runCPU()`: and `runCPU()`
 
  ``` c
 void printCPU(CPU *cpu)
@@ -35,6 +35,9 @@ void printCPU(CPU *cpu)
 }
 ```
 
+``` c
+ printf("PC=%u OPCODE=%u\n", cpu->PC - 1, opcode);
+```
 Can produce an output such as this:
 
 ```c
