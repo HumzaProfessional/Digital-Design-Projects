@@ -14,8 +14,8 @@ cpu.memory[1] = 6;   // A = 6
 cpu.memory[2] = 6;   // JMP
 cpu.memory[3] = 6;   // jump to address 6
 
-cpu.memory[4] = 1;   // (should be skipped)
-cpu.memory[5] = 99;  // (should be skipped)
+cpu.memory[4] = 1;   // should be skipped
+cpu.memory[5] = 99;  // 
 
 cpu.memory[6] = 1;   // LOAD A
 cpu.memory[7] = 9;   // A = 9
