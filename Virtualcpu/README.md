@@ -22,7 +22,20 @@ The CPU follows this cycle:
 
 ### Debug and verification:
 
-When debug tracing is enabled inside `runCPU()`, output can look like this:
+ The follow code inside `runCPU()`: and 
+
+ ``` c
+void printCPU(CPU *cpu)
+{
+    printf("A: %u\n", cpu->A);
+    printf("B: %u\n", cpu->B);
+    printf("Z: %u\n", cpu->Z);
+     printf("C: %u\n", cpu->C);
+    printf("PC: %u\n", cpu->PC);
+}
+```
+
+Can produce an output such as this:
 
 ```c
 PC=0 OPCODE=1
