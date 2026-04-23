@@ -51,11 +51,23 @@ void runCPU(CPU *cpu)
         // ADD immediate value (next memory byte) to register A
         else if(opcode == 2)
         {
-            cpu->A = cpu->A + cpu->memory[cpu->PC];
+
+            unint16_t result =  cpu->A = cpu->A + cpu->memory[cpu->PC];
             cpu->PC++;
 
+            // Update carry flag depending on result
+            if (result > 255)
+            {
+                cpu->C = 1;
+            }
+            else
+            {
+                cpu->C = 0;
+            }
+            cpu->A = (uint8_t)result;
+
             // Update zero flag depending on result
-            if(cpu->A == 0)
+            if(result == 0)
             {
                 cpu->Z = 1;   // result was zero
             }
